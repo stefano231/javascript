@@ -1,0 +1,28 @@
+h1 {
+    color: rgb(255, 255, 255);
+}
+h2 {
+    color: rgb(14, 4, 4);
+}
+P {
+    color: rgb(174, 18, 18);
+}
+h5 {
+    color: azure;
+}
+body{
+    color: rgb(52, 23, 157);
+}
+body{
+    background-color: rgb(237, 195, 189);
+}
+ol {
+    color: rgb(52, 23, 157);
+}
+
+
+h3 ~ h5 {
+    background-color: rgb(174, 18, 18);
+}
+ 
+{}
