@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Audio 1</title>
+        <style>
+        audio::-webkit-media-controls-panel { background-color: blanchedalmond;}
+    </style>
+</head>
+<body>
+    <button onclick="comenzarTiempo ()">Alarma</button>
+    <audio id="audioAlarma" controls>
+        <source src="Desktop/javascript/Seccion_3/7_Sonidos/Sonidos" type="audio/mpeg">
+    </audio>
+        <script>
+        let elementoSonidoAlarma = document.getElementById("audioAlarma");
+            elementoSonidoAlarma.play( ) ;
+        </script>
+</body>
+</html>

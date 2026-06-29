@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Sonidos</title>
+    <style>
+        audio::-webkit-media-controls-panel {
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo ()">Alarma</button>
+    <h1 id="textoAlarma" style="color: red;">APAGADO</h1>
+
+    <audio id="audioAlarma" controls>
+        <source src="Desktop/javascript/Seccion_3/7_Sonidos/Sonidos" type="audio/mpeg">
+        Sonido no habilitado
+    </audio>
+    <script>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        let elementosTextoAlarma = document.getElementById("textoAlarma");
+        let elementoSonidoAlarma = document.getElementById("audioAlarma");
+
+        function comenzarTiempo () {
+            setTimeout (tiempoCumplido, 1000 * elementoSegundos.value);
+        }
+
+        function tiempoCumplido () {
+            elementosTextoAlarma.textContent = "ENCENDIDO";
+            elementosTextoAlarma.style.color = "green" ;
+            elementoSonidoAlarma.play( ) ;
+        }
+    </script>
+</body>
+</html>
