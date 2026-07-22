@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="misEstilos.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <h1>Preguntas de Futbol</h1>     
+    <h1>Contador del tiempo de la partida</h1>
+    <div id="contador">30</div>
+    <button onclick="iniciarJuego()">Iniciar</button>
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+
+    <script>
+        let tiempo = 30; 
+        let intervalo;
+
+        function actualizarJuego() {
+            document.getElementById("contador").textContent = tiempo;
+        }
+        function contar () {
+            if (tiempo > 0) {
+                tiempo--;
+                console.log(tiempo)
+                actualizarJuego();
+            } else {
+                detenerJuego();
+                alert("¡Se acabo el tiempo, haz perdido!");
+            }
+        }
+        function iniciarJuego() {
+            if (!intervalo) {
+                intervalo = setInterval(contar, 1000);
+            }
+        }
+        function detenerJuego() {
+            clearInterval (intervalo) ; 
+            intervalo = null;
+        }
+        function reiniciarJuego() {
+            detenerJuego();
+            tiempo = 30;
+            actualizarJuego();
+        }
+        actualizarJuego()
+        function TerminarJuego() {
+            detenerJuego();
+            tiempo = 30;
+            actualizarJuego();
+            alert("!GANASTE¡")
+        }
+        actualizarJuego()
+
+    </script>
+    <h2>1. ¿Quien fue la ultima selecciona campeona del mundo ?</h2>
+        <input type="text" id="inputTexto" value="">
+    <h2>2. ¿Quien es el jugador con mas balones de oro?</h2>
+        <input type="text" id="inputTexto" value="">
+    <h2>3. ¿Cual es el club con mas champions league?</h2>
+        <input type="text" id="inputTexto" value="">
+    <h2>4. ¿Cual es la seleccion mas ganadora del mundo?</h2>
+        <input type="text" id="inputTexto" value="">
+    <h2>5. Nombre de 3 jugadores del FC Barcelona (actuales) </h2>
+        <input type="text" id="inputTexto" value="">
+    <h1 id="titulo"></h1>
+    <button onclick="TerminarJuego()">Terminar Juego</button>
+
+
+
+
+
+
+</body>
+
+</html>
