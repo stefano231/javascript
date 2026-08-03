@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random 1</title>
+</head>
+
+<body>
+    <p>
+        <h2>Presiona para tu numero aleatorio entre el 10 y 50</h2>
+        <button onclick="mostrarMensaje()">Click aqui</button>
+    </p>
+    <script>
+        function mostrarMensaje(){
+            let aleatorio = Math.floor(Math.random()*(50 - 10) + 10);
+            alert(aleatorio);
+        }
+    </script>
+</body>
+
+</html>
