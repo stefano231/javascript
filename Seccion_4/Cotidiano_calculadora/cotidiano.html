@@ -2,20 +2,83 @@
 <html>
 <head>
     <title>Calculadora</title>
+    <style>
+        body{
+            background-color: burlywood;
+            
+        }
+    </style>
 </head>
 <body>
     <p>Calculadora</p>
-    <input type="number" id="numero1"> <input type="number" id="numero2">
-    <p><button onclick="sumar()">+</button> <button onclick="restar">-</button> <button onclick="multiplicar()">x</button> <button onclick="dividir()">/</button></p>
-    <p><button onclick="raiz()">raiz</button> <button onclick="potencia()">potencia</button></p>
-    <p><button onclick="absoluto()">absoluto</button> <button onclick="random()">random</button></p>
+    <input padding: 60px type="number" id="numero1"> <input type="number" id="numero2">
+    <p style="margin: 20px;"><button onclick="sumar()">+</button><button onclick="restar()">-</button><button onclick="multiplicar()">x</button><button onclick="dividir()">/</button></p>
+    <p style="margin: 20px;"><button onclick="raiz()">raiz</button><button onclick="potencia()">potencia</button></p>
+    <p style="margin: 20px;"><button onclick="absoluto()">absoluto</button><button onclick="random()">random</button></p>
 
-    <p>Resultado:</p>
-    <input type="number" id="resultado">
-    <p><button onclick="round()">round</button> <button onclick="floor()">floor</button> <button onclick="ceil()">ceil</button></p>
+    <p><h3>Resultado:</h3>
+    <h2><input type="number" id="resultado"></h2>
+    <h1><button onclick="round()">round</button><button onclick="floor()">floor</button><button onclick="ceil()">ceil</button></p></h1>
     
     <script>
-        
+        function num1(){
+            return parseFloat(document.getElementById('numero1').value);
+        }
+        function num2(){
+            return parseFloat(document.getElementById('numero2').value);
+        }
+        function resultado(){
+            return parseFloat(document.getElementById('resultado').value);
+        }
+        function mostrar(barra){
+            document.getElementById('resultado').value = barra;
+        }
+        function sumar(){ 
+            mostrar(num1() + num2()); 
+        }
+        function restar(){ 
+            mostrar(num1() - num2()); 
+        }
+        function multiplicar(){ 
+            mostrar(num1() * num2()); 
+        }
+        function dividir(){
+            mostrar(num1() / num2());
+            }
+        function raiz(){
+            let numero1 = parseInt (document.getElementById("numero1").value)
+            let numero2 = parseInt (document.getElementById("numero2").value)
+            let total = Math.sqrt(numero1)
+            document.getElementById("resultado").value = total;
+        }
+        function potencia(){
+            let numero1 = parseInt (document.getElementById("numero1").value)
+            let numero2 = parseInt (document.getElementById("numero2").value)
+            let total = numero1 ** numero2
+            document.getElementById("resultado").value = total;
+            
+        }
+        function absoluto(){
+            let numero1 = parseInt (document.getElementById("numero1").value)
+            let numero2 = parseInt (document.getElementById("numero2").value)
+            let total = Math.abs(numero1)
+            document.getElementById("resultado").value = total;
+        }
+        function random(){
+            mostrar(Math.random() * (101-1) + 1)
+        }
+        function round(){
+            total = Math.round(document.getElementById("resultado").value)
+            document.getElementById("resultado").value = total;
+        }
+        function floor(){
+            total = Math.floor(document.getElementById("resultado").value)
+            document.getElementById("resultado").value = total;
+        }
+        function ceil(){
+            total = Math.ceil(document.getElementById("resultado").value)
+            document.getElementById("resultado").value = total;
+        }
     </script>
 </body>
 </html>
