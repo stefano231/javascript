@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practica do while 2</title>
+</head>
+<body>
+    <script>
+        function testLoop(numero){
+            let multiplicar = 1;
+
+            numero = parseInt(numero)
+
+            if (isNaN(numero) || tablas <=0){
+                console.log("ingrese el numero porfavor")
+                return;
+            }
+
+            console.log("Tabla del " + numero + ":"
+            )
+
+            do{
+                let resultado = numero * multiplicar
+                console.logI(numero + "x" + multiplicar + "=" + resultado)
+                multiplicar++
+            }while (multiplicar <=10)
+        }
+
+        let numUser = prompt("Ingrese el numero que quiere multiplicar");
+
+        testLoop(numUser);
+
+
+
+        let numero = prompt("Escriba el numero a multiplicar");
+        function testLoop(numero){        
+            let x = 1;
+        do{
+            console.log(numero + "x" + "x" + "=");
+            x++;
+        }while (x < 11);
+    }
+    testLoop(numero)
+    </script>
+</body>
+</html>
